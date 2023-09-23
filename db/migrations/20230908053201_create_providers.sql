@@ -1,0 +1,13 @@
+-- migrate:up
+CREATE TABLE providers (
+	id INTEGER NOT NULL AUTO_INCREMENT,
+	provider_name VARCHAR(100) NOT NULL,
+	type CHAR(1) NOT NULL,
+	image_url VARCHAR(500) NULL,
+	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	updated_at TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (id)
+);
+
+-- migrate:down
+DROP TABLE providers
